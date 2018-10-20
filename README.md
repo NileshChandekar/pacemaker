@@ -323,3 +323,13 @@
 	# pcs -f drbd_cfg resource master WebDataClone WebData master-max=1 master-node-max=1 \
 	        clone-max=2 clone-node-max=1 notify=true
 	# pcs cluster push cib drbd_cfg
+	
+#### Backup cluster configuration
+
+	# pcs config backup <tar archive>
+	
+#### Restore cluster using the backup
+
+	# pcs cluster stop [--all]
+	# pcs config restore <tar archive>
+	# pcs cluster start [--all]
