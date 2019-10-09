@@ -333,3 +333,11 @@
 	# pcs cluster stop [--all]
 	# pcs config restore <tar archive>
 	# pcs cluster start [--all]
+
+### Check if a node is still fenced
+
+    # attrd_updater --query --all --name=evacuate
+
+### Unset fence flag for a compute node
+
+    # attrd_updater --name=evacuate --update=no --node=<FAILED_HOST>
